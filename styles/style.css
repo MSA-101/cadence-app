@@ -1,0 +1,78 @@
+/* 1. Page background */
+body {
+    background-color: #0b0f19;
+    color: #f8fafc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+header h1 {
+    color: #38bdf8;
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+}
+
+header p {
+    color: #94a3b8;
+}
+
+#planner-grid {
+    display: flex;
+    gap: 12px;
+}
+
+/* 2. Column card background */
+.day-column {
+    flex: 1;
+    background-color: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 12px;
+    min-height: 500px;
+}
+
+/* 3. Header pill badge */
+.day-header {
+    background-color: #1e293b;
+    color: #38bdf8;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid #0284c7;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+}
+
+/* 4. Parent container holding all blocks for a day */
+.blocks-container {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 5. Glowing task block card */
+.block-container {
+    background-color: #1e293b;
+    border-left: 4px solid #38bdf8;
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.block-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.5);
+}
+
+.block-container strong {
+    font-size: 0.75rem;
+    color: #38bdf8;
+}
+
+.block-container p {
+    margin: 4px 0 0 0;
+    font-size: 0.9rem;
+    color: #f1f5f9;
+}
