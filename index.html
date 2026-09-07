@@ -3,13 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadence - Ideal Week Planner</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
     <header>
         <h1>Cadence</h1>
         <p>Ideal Week Planner</p>
     </header>
+
+    <form id="block-form">
+        <input type="text" id="task-title" placeholder="Task Title" required>
+        <select id="task-day">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>  
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select>
+        <input type="text" id="task-time" placeholder="Start Time" required>
+        <button class="js button" type="submit">Add Task</button>
+    </form>
+
     <main id="planner-grid">
         <div class="day-column">
             <div class="day-header">Monday</div>
@@ -43,6 +59,6 @@
     
 
 
-    <script type="module" src="scripts/app.js"></script>
+    <script type="module" src="./scripts/cadence.js"></script>
 </body>
 </html>

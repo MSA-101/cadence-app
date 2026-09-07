@@ -76,3 +76,27 @@ header p {
     font-size: 0.9rem;
     color: #f1f5f9;
 }
+
+#block-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+#block-form input, #block-form select {
+    background-color: #161b22; 
+    color: #fff; 
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #1f293d;
+}
+
+#block-form button {
+    background-color: #00d2ff;
+    color: #0b0f19;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
