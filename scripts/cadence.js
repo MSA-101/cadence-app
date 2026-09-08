@@ -1,5 +1,12 @@
 import { initialBlocks } from "../data/blocks.js";
 
+const savedData = localStorage.getItem("cadenceBlocks");
+let blocks = savedData ? JSON.parse(savedData) : initialBlocks;
+
+function saveBlocksToStorage(blocksArray) {
+  localStorage.setItem("cadenceBlocks", JSON.stringify(blocksArray));
+}
+
 const blockForm = document.querySelector("#block-form");
 
 blockForm.addEventListener("submit", (event) => {
@@ -10,12 +17,14 @@ blockForm.addEventListener("submit", (event) => {
   const time = document.querySelector("#task-time").value;
 
   const newBlock = {
+    id: Date.now(),
     title,
     day,
     time
   }
 
-  initialBlocks.push(newBlock);
+  blocks.push(newBlock);
+  saveBlocksToStorage(blocks);
   renderBlocks();
   blockForm.reset();
   
@@ -30,7 +39,7 @@ dayColumns.forEach((column) => {
   container.innerHTML = "";
 })
 
-initialBlocks.forEach((block) => {
+blocks.forEach((block) => {
   dayColumns.forEach((column) => {
   const dayHeader = column.querySelector(".day-header").textContent;
   if (dayHeader === block.day) {
