@@ -100,3 +100,13 @@ header p {
     cursor: pointer;
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
+
+.delete-btn {
+    background-color: #ef4444;
+    color: #fff;
+    border: none;
+    padding: 2px 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}

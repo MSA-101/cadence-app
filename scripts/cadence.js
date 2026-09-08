@@ -14,7 +14,7 @@ blockForm.addEventListener("submit", (event) => {
 
   const title = document.querySelector("#task-title").value;
   const day = document.querySelector("#task-day").value;
-  const time = document.querySelector("#task-time").value;
+  const time = document.querySelector("#task-time").value;  
 
   const newBlock = {
     id: Date.now(),
@@ -28,6 +28,18 @@ blockForm.addEventListener("submit", (event) => {
   renderBlocks();
   blockForm.reset();
   
+});
+
+const plannerGrid = document.querySelector("#planner-grid");
+
+plannerGrid.addEventListener("click", (event) => {
+  if (event.target.classList.contains("delete-btn")) {
+    const blockId = Number(event.target.dataset.id);
+    blocks = blocks.filter((block) => block.id !== blockId);
+
+    saveBlocksToStorage(blocks);
+    renderBlocks();
+  }
 });
 
 
@@ -48,6 +60,7 @@ blocks.forEach((block) => {
       <div class="block-container">
         <strong>${block.time}</strong>
         <p>${block.title}</p>
+        <button class="delete-btn" data-id="${block.id}">delete</button>
       </div>
     `;
   }
