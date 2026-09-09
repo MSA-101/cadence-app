@@ -154,3 +154,99 @@ header p {
   background: #00ffcc;
   color: #0d1117;
 }
+
+/* 1. This rule actually hides the modal box when the 'hidden' class is present */
+.hidden {
+  display: none !important;
+}
+
+/* 2. Styles the full-screen dark background overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 3. Styles the popup box centered on screen */
+.modal-content {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #58a6ff;
+  margin-bottom: 16px;
+}
+
+/* 4. Styles the 'X' close button inside the modal */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: #8b949e;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* 5. Stacks form elements vertically inside the modal box */
+#block-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Style the primary + Add Task button */
+.primary-btn {
+  background-color: #00d2ff;
+  color: #0d1117;
+  font-weight: 600;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.primary-btn:hover {
+  background-color: #33ddff;
+  transform: translateY(-1px);
+}
+
+/* Align the Cadence title and button horizontally */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* Ensure Cadence title stays bright cyan */
+.app-header h1 {
+  color: #00d2ff;
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* Ensure the button text stays pitch black against the neon background */
+.primary-btn {
+  background-color: #00d2ff;
+  color: #000000 !important; /* Forces bold, clear black text */
+  font-weight: 700;
+}

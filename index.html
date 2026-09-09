@@ -6,25 +6,37 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <header>
-        <h1>Cadence</h1>
-        <p>Ideal Week Planner</p>
-    </header>
+<!-- App Header with Open Button -->
+<header class="app-header">
+  <h1>Cadence</h1>
+  <button id="open-modal-btn" class="primary-btn">+ Add Task</button>
+</header>
+
+<!-- The Modal Popup Overlay -->
+<div id="modal-overlay" class="modal-overlay hidden">
+  <div class="modal-content">
+    <button id="close-modal-btn" class="close-btn">&times;</button>
+    <h2>Add New Task</h2>
 
     <form id="block-form">
-        <input type="text" id="task-title" placeholder="Task Title" required>
-        <select id="task-day">
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>  
-            <option value="Friday">Friday</option>
-            <option value="Saturday">Saturday</option>
-            <option value="Sunday">Sunday</option>
-        </select>
-        <input type="text" id="task-time" placeholder="Start Time" required>
-        <button class="js button" type="submit">Add Task</button>
+      <input type="text" id="task-title" placeholder="Task Title" required />
+      
+      <select id="task-day">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+      </select>
+
+      <input type="text" id="task-time" placeholder="Start Time (e.g. 6:30 PM)" required />
+      
+      <button type="submit" class="submit-btn">Save Task</button>
     </form>
+  </div>
+</div>
 
     <main id="planner-grid">
         <div class="day-column">
