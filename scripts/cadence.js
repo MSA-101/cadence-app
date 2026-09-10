@@ -8,6 +8,13 @@ function saveBlockToStorage(blocksArray) {
   localStorage.setItem("cadenceBlocks", JSON.stringify(blocksArray));
 }
 
+// Helper to get current day name matching your select option values
+function getCurrentDayName() {
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const todayIndex = new Date().getDay(); // Returns 0 for Sunday, 1 for Monday, etc.
+  return days[todayIndex];
+}
+
 function capitalizeWords(str) {
   return str
     .toLowerCase()
@@ -130,12 +137,19 @@ const closeModalBtn = document.querySelector("#close-modal-btn");
 
 // 2. Helper functions to toggle visibility
 function openModal() {
+  // --- Auto-select current day ---
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  document.querySelector("#task-day").value = days[new Date().getDay()];
+  // -------------------------------
+
   modalOverlay.classList.remove("hidden");
 }
 
 function closeModal() {
   modalOverlay.classList.add("hidden");
-  blockForm.reset();
+  // Grabs the form dynamically so it doesn't crash if blockForm isn't defined above
+  const form = document.querySelector("#block-form") || document.querySelector("form");
+  if (form) form.reset();
 }
 
 // 3. Listen for clicks to open and close
