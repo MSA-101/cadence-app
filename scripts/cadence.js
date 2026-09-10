@@ -149,4 +149,29 @@ modalOverlay.addEventListener("click", (event) => {
   }
 });
 
+// 1. Select the page containers
+const landingPage = document.querySelector("#landing-page");
+const appPage = document.querySelector("#app-page");
+
+// 2. Select the navigation buttons
+const heroGetStartedBtn = document.querySelector("#hero-get-started-btn");
+const navGetStartedBtn = document.querySelector("#nav-get-started-btn");
+const backToLandingBtn = document.querySelector("#back-to-landing-btn");
+
+// 3. Navigation Functions
+function showAppPage() {
+  landingPage.classList.add("hidden");
+  appPage.classList.remove("hidden");
+}
+
+function showLandingPage() {
+  appPage.classList.add("hidden");
+  landingPage.classList.remove("hidden");
+}
+
+// 4. Attach Click Event Listeners
+heroGetStartedBtn.addEventListener("click", showAppPage);
+navGetStartedBtn.addEventListener("click", showAppPage);
+backToLandingBtn.addEventListener("click", showLandingPage);
+
 renderBlocks();

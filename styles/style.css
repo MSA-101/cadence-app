@@ -250,3 +250,221 @@ header p {
   color: #000000 !important; /* Forces bold, clear black text */
   font-weight: 700;
 }
+
+/* ==========================================
+   LANDING PAGE LAYOUT & STYLING
+   ========================================== */
+
+/* Main Container Wrapper */
+.view-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+/* Landing Page Navigation Header */
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: #00d2ff;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.secondary-btn:hover {
+  border-color: #00d2ff;
+  color: #00d2ff;
+}
+
+.text-btn {
+  background: transparent;
+  border: none;
+  color: #8b949e;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-right: 12px;
+  padding: 0;
+}
+
+.text-btn:hover {
+  color: #00d2ff;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Hero Section Grid */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(0, 210, 255, 0.1);
+  color: #00d2ff;
+  border: 1px solid rgba(0, 210, 255, 0.25);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  line-height: 1.15;
+  margin: 20px 0;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.highlight {
+  background: linear-gradient(90deg, #00d2ff, #00ffcc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  color: #8b949e;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.hero-btn {
+  font-size: 1.05rem;
+  padding: 14px 28px;
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+}
+
+/* Interactive Preview Card */
+.interactive-preview {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transform: perspective(1000px) rotateY(-4deg) rotateX(2deg);
+  transition: transform 0.3s ease;
+}
+
+.interactive-preview:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #8b949e;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #21262d;
+  margin-bottom: 16px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00ffcc;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ffcc;
+}
+
+.preview-block {
+  background: #0d1117;
+  border-left: 3px solid #30363d;
+  padding: 12px 16px;
+  margin-top: 12px;
+  border-radius: 6px;
+}
+
+.preview-block strong {
+  color: #00d2ff;
+  font-size: 0.85rem;
+}
+
+.preview-block p {
+  margin: 4px 0 0;
+  color: #c9d1d9;
+  font-size: 0.95rem;
+}
+
+.preview-block.active {
+  border-left-color: #00ffcc;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.1);
+}
+
+/* Science / Features Section */
+.features-section {
+  padding: 60px 0 20px;
+  text-align: center;
+}
+
+.features-section h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.feature-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  padding: 28px 24px;
+  border-radius: 12px;
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: #00d2ff;
+}
+
+.feature-card .icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.feature-card h4 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 1.15rem;
+}
+
+.feature-card p {
+  margin: 0;
+  color: #8b949e;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}

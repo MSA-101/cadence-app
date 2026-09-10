@@ -6,71 +6,140 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-<!-- App Header with Open Button -->
-<header class="app-header">
-  <h1>Cadence</h1>
-  <button id="open-modal-btn" class="primary-btn">+ Add Task</button>
-</header>
+<body>
+  <!-- ==================== 1. LANDING PAGE VIEW ==================== -->
+  <div id="landing-page" class="view-container">
+    <header class="landing-header">
+      <h1 class="logo">Cadence</h1>
+      <button id="nav-get-started-btn" class="secondary-btn">Launch App</button>
+    </header>
 
-<!-- The Modal Popup Overlay -->
-<div id="modal-overlay" class="modal-overlay hidden">
-  <div class="modal-content">
-    <button id="close-modal-btn" class="close-btn">&times;</button>
-    <h2>Add New Task</h2>
+    <!-- Hero Section -->
+    <main class="hero-section">
+      <div class="hero-content">
+        <span class="badge">Backed by Habit Psychology</span>
+        <h2 class="hero-title">Master Your Time. <br><span class="highlight">Engineer Your Life.</span></h2>
+        <p class="hero-subtitle">
+          Cadence uses time-blocking and behavioral science to help you build lasting habits, eliminate decision fatigue, and structure your ideal week.
+        </p>
+        <button id="hero-get-started-btn" class="primary-btn hero-btn">Get Started — It's Free</button>
+      </div>
 
-    <form id="block-form">
-      <input type="text" id="task-title" placeholder="Task Title" required />
-      
-      <select id="task-day">
-        <option value="Monday">Monday</option>
-        <option value="Tuesday">Tuesday</option>
-        <option value="Wednesday">Wednesday</option>
-        <option value="Thursday">Thursday</option>
-        <option value="Friday">Friday</option>
-        <option value="Saturday">Saturday</option>
-        <option value="Sunday">Sunday</option>
-      </select>
-
-      <input type="text" id="task-time" placeholder="Start Time (e.g. 6:30 PM)" required />
-      
-      <button type="submit" class="submit-btn">Save Task</button>
-    </form>
-  </div>
-</div>
-
-    <main id="planner-grid">
-        <div class="day-column">
-            <div class="day-header">Monday</div>
-            <div class="blocks-container"></div>
+      <!-- Interactive Preview Card -->
+      <div class="interactive-preview">
+        <div class="preview-card">
+          <div class="preview-header">
+            <span>Ideal Week Blueprint</span>
+            <span class="dot"></span>
+          </div>
+          <div class="preview-body">
+            <div class="preview-block active">
+              <strong>06:30 AM</strong>
+              <p>Deep Work & Habit Stacking</p>
+            </div>
+            <div class="preview-block">
+              <strong>02:00 PM</strong>
+              <p>Hypertrophy & Mobility</p>
+            </div>
+          </div>
         </div>
-        <div class="day-column">
-            <div class="day-header">Tuesday</div>
-            <div class="blocks-container"></div>
-        </div>
-        <div class="day-column">
-            <div class="day-header">Wednesday</div>
-            <div class="blocks-container"></div>
-        </div>
-        <div class="day-column">
-            <div class="day-header">Thursday</div>
-            <div class="blocks-container"></div>
-        </div>
-        <div class="day-column">
-            <div class="day-header">Friday</div>
-            <div class="blocks-container"></div>
-        </div>
-        <div class="day-column">
-            <div class="day-header">Saturday</div>
-            <div class="blocks-container"></div>
-        </div>
-        <div class="day-column">
-            <div class="day-header">Sunday</div>
-            <div class="blocks-container"></div>
-        </div>
+      </div>
     </main>
-    
 
+    <!-- Behavioral Science Cards Section -->
+    <section class="features-section">
+      <h3>The Science of Cadence</h3>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="icon">⚡</div>
+          <h4>Time-Blocking</h4>
+          <p>Reduce cognitive overload by assigning every target a dedicated time slot.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">🧠</div>
+          <h4>Habit Stacking</h4>
+          <p>Anchor positive routines to existing daily habits for effortless consistency.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">📈</div>
+          <h4>Visual Feedback Loops</h4>
+          <p>Complete tasks to trigger dopamine rewards that reinforce execution momentum.</p>
+        </div>
+      </div>
+    </section>
+  </div>
 
-    <script type="module" src="./scripts/cadence.js"></script>
+  <!-- ==================== 2. PLANNER APP VIEW ==================== -->
+  <div id="app-page" class="view-container hidden">
+    <!-- App Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <button id="back-to-landing-btn" class="text-btn">← Home</button>
+        <h1>Cadence</h1>
+      </div>
+      <button id="open-modal-btn" class="primary-btn">+ Add Task</button>
+    </header>
+
+    <!-- Planner Grid -->
+    <main id="planner-grid">
+      <div class="day-column">
+        <div class="day-header">Monday</div>
+        <div class="blocks-container"></div>
+      </div>
+      <div class="day-column">
+        <div class="day-header">Tuesday</div>
+        <div class="blocks-container"></div>
+      </div>
+      <div class="day-column">
+        <div class="day-header">Wednesday</div>
+        <div class="blocks-container"></div>
+      </div>
+      <div class="day-column">
+        <div class="day-header">Thursday</div>
+        <div class="blocks-container"></div>
+      </div>
+      <div class="day-column">
+        <div class="day-header">Friday</div>
+        <div class="blocks-container"></div>
+      </div>
+      <div class="day-column">
+        <div class="day-header">Saturday</div>
+        <div class="blocks-container"></div>
+      </div>
+      <div class="day-column">
+        <div class="day-header">Sunday</div>
+        <div class="blocks-container"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- The Modal Popup Overlay -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal-content">
+      <button id="close-modal-btn" class="close-btn">&times;</button>
+      <h2>Add New Task</h2>
+
+      <form id="block-form">
+        <input type="text" id="task-title" placeholder="Task Title" required />
+        
+        <select id="task-day">
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+
+        <input type="text" id="task-time" placeholder="Start Time (e.g. 6:30 PM)" required />
+        
+        <button type="submit" class="submit-btn">Save Task</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="./scripts/cadence.js"></script>
+</body>
 </body>
 </html>
